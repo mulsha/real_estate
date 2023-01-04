@@ -5,6 +5,16 @@ import 'package:real_estate/loginpage/smscode.dart';
 class smsmsg extends StatefulWidget {
   const smsmsg({Key? key}) : super(key: key);
 
+
+
+
+
+
+
+
+
+
+
   @override
   State<smsmsg> createState() => _smsmsgState();
 }
