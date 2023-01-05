@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/bottomsheet/Home/01-Home.dart';
+import 'package:real_estate/bottomsheet/bottomsheet.dart';
 
 class succespayment extends StatefulWidget {
   const succespayment({Key? key}) : super(key: key);
@@ -52,11 +54,12 @@ class _succespaymentState extends State<succespayment> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return home();
-                  },
-                ));
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) {
+                //     return home();
+                //   },
+                // ));
+                Get.to(bottompage());
               },
               child: Container(
                 height: th * 0.07,

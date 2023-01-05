@@ -1,15 +1,16 @@
+//02-Register_Step2
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:real_estate/passwordpages/smscode.dart';
 
-import 'package:real_estate/loginpage/emailpage.dart';
-
-class newpassword extends StatefulWidget {
-  const newpassword({Key? key}) : super(key: key);
+class smsmsg extends StatefulWidget {
+  const smsmsg({Key? key}) : super(key: key);
 
   @override
-  State<newpassword> createState() => _newpasswordState();
+  State<smsmsg> createState() => _smsmsgState();
 }
 
-class _newpasswordState extends State<newpassword> {
+class _smsmsgState extends State<smsmsg> {
   @override
   Widget build(BuildContext context) {
     double Tht = MediaQuery.of(context).size.height;
@@ -28,11 +29,11 @@ class _newpasswordState extends State<newpassword> {
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/BG2.png"),
+                      image: AssetImage("images/BG1.png"),
                       fit: BoxFit.fitWidth)),
             ),
             Container(
-              height: th * 0.57,
+              height: th * 0.65,
               width: tw * 1.0,
               margin: EdgeInsets.only(top: th * .46),
               decoration: BoxDecoration(
@@ -52,10 +53,10 @@ class _newpasswordState extends State<newpassword> {
                       child: Container(
                         margin: EdgeInsets.only(left: 15),
                         child: Text(
-                          "Set new password",
+                          "Confirm via SMS",
                           style: TextStyle(
                               fontSize: th * 0.033,
-                              fontFamily: 'pushpins',
+                              fontFamily: 'Poppins',
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -65,7 +66,7 @@ class _newpasswordState extends State<newpassword> {
                       child: Container(
                         margin: EdgeInsets.only(top: 10, left: 15),
                         child: Text(
-                          "Enter the new password you would to use and try login",
+                          "Enter your phone number to confirm your account",
                           style: TextStyle(
                               fontSize: th * 0.02, color: Color(0XFF8F92A1)),
                         ),
@@ -77,66 +78,35 @@ class _newpasswordState extends State<newpassword> {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
-                        // color: Colors.orange,
                         margin: EdgeInsets.only(left: 15),
                         child: Text(
-                          "PASSWORD",
+                          "PHONE NUMBER",
                           style: TextStyle(
-                              fontSize: th * 0.02,
+                              fontSize: th * 0.025,
                               color: Colors.black,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
                     ),
                     Container(
-                      // margin: EdgeInsets.only(top:1),
-                      height: th * 0.09,
+                      margin: EdgeInsets.only(top: 10),
+                      height: th * 0.07,
                       width: tw * 0.85,
                       // color: Colors.orange,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            labelText: 'enter password',
-                            suffixIcon: Icon(Icons.visibility)),
+                      child: TextFormField(inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                        keyboardType: TextInputType.number,
+                        decoration:
+                            InputDecoration(labelText: 'enter phone number'),
                       ),
                     ),
                     SizedBox(
-                      height: th * 0.03,
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Container(
-                        margin: EdgeInsets.only(left: 15),
-                        child: Text(
-                          "REPEAT PASSWORD",
-                          style: TextStyle(
-                              fontSize: th * 0.02,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // margin: EdgeInsets.only(top: 6),
-                      height: th * 0.09,
-                      width: tw * 0.85,
-                      // color: Colors.orange,
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                            labelText: 'repeat password',
-                            suffixIcon: Icon(
-                              Icons.visibility,
-                              size: th * 0.03,
-                            )),
-                      ),
-                    ),
-                    SizedBox(
-                      height: th * 0.05,
+                      height: th * .17,
                     ),
                     InkWell(
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return emailpage();
+                            return smsscode();
                           },
                         ));
                       },
@@ -145,7 +115,7 @@ class _newpasswordState extends State<newpassword> {
                         width: tw * 0.85,
                         child: Center(
                           child: Text(
-                            "Reset password",
+                            "Next step",
                             style: TextStyle(
                                 fontSize: th * 0.025,
                                 color: Colors.white,

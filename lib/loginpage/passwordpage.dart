@@ -1,8 +1,9 @@
 //02-Login_Password
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/bottomsheet/bottomsheet.dart';
 
-import 'package:real_estate/loginpage/forgotpass.dart';
+import 'package:real_estate/passwordpages/forgotpass.dart';
 
 class passwordpage extends StatefulWidget {
   const passwordpage({Key? key}) : super(key: key);
@@ -102,11 +103,12 @@ class _passwordpageState extends State<passwordpage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return bottompage();
-                          },
-                        ));
+                        // Navigator.push(context, MaterialPageRoute(
+                        //   builder: (context) {
+                        //     return bottompage();
+                        //   },
+                        // ));
+                        Get.to(bottompage());
                       },
                       child: Container(
                         height: th * 0.07,

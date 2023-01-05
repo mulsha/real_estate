@@ -1,6 +1,7 @@
 //03-Register_Step3
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/forgotpass.dart';
+import 'package:flutter/services.dart';
+import 'package:real_estate/passwordpages/forgotpass.dart';
 
 class smsscode extends StatefulWidget {
   const smsscode({Key? key}) : super(key: key);
@@ -28,7 +29,8 @@ class _smsscodeState extends State<smsscode> {
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/BG1.png"), fit: BoxFit.fitWidth)),
+                      image: AssetImage("images/BG1.png"),
+                      fit: BoxFit.fitWidth)),
             ),
             Container(
               height: th * 0.65,
@@ -73,25 +75,27 @@ class _smsscodeState extends State<smsscode> {
                     SizedBox(
                       height: th * 0.02,
                     ),
-
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       height: th * 0.07,
                       width: tw * 0.85,
                       // color: Colors.orange,
                       child: TextFormField(
-                        decoration:
-                            InputDecoration(labelText: 'enter code'),
+                        inputFormatters: [LengthLimitingTextInputFormatter(4)],
+                        decoration: InputDecoration(labelText: 'enter code'),
                       ),
                     ),
                     SizedBox(
                       height: th * .2,
                     ),
-                    InkWell(onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return forgotpass();
-                      },));
-                    },
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return forgotpass();
+                          },
+                        ));
+                      },
                       child: Container(
                         height: th * 0.07,
                         width: tw * 0.85,

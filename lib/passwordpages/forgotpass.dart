@@ -1,6 +1,8 @@
 //01-Forgot_password
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/passwordcode.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/passwordpages/passwordcode.dart';
 
 class forgotpass extends StatefulWidget {
   const forgotpass({Key? key}) : super(key: key);
@@ -93,6 +95,7 @@ class _forgotpassState extends State<forgotpass> {
                       width: tw * 0.85,
                       // color: Colors.orange,
                       child: TextFormField(
+                        inputFormatters: [LengthLimitingTextInputFormatter(10)],
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                             labelText: 'enter phone number',
@@ -109,6 +112,7 @@ class _forgotpassState extends State<forgotpass> {
                             return passwordcode();
                           },
                         ));
+                        // Get.to(passwordcode());
                       },
                       child: Container(
                         height: th * 0.07,

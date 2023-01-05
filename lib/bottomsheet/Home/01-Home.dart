@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/detailspage.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -493,11 +494,12 @@ class _homeState extends State<home> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return dtailspage();
-                  },
-                ));
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) {
+                //     return dtailspage();
+                //   },
+                // ));
+                Get.to(dtailspage());
               },
               child: Container(
                 width: th * 0.8,

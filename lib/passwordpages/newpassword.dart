@@ -1,25 +1,26 @@
-//02-Register_Step2
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/smscode.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
-class smsmsg extends StatefulWidget {
-  const smsmsg({Key? key}) : super(key: key);
+import 'package:real_estate/loginpage/emailpage.dart';
 
-
-
-
-
-
-
-
-
-
+class newpassword extends StatefulWidget {
+  const newpassword({Key? key}) : super(key: key);
 
   @override
-  State<smsmsg> createState() => _smsmsgState();
+  State<newpassword> createState() => _newpasswordState();
 }
 
-class _smsmsgState extends State<smsmsg> {
+class _newpasswordState extends State<newpassword> {
+  bool passvisibility = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    passvisibility = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     double Tht = MediaQuery.of(context).size.height;
@@ -38,10 +39,11 @@ class _smsmsgState extends State<smsmsg> {
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/BG1.png"), fit: BoxFit.fitWidth)),
+                      image: AssetImage("images/BG2.png"),
+                      fit: BoxFit.fitWidth)),
             ),
             Container(
-              height: th * 0.65,
+              height: th * 0.57,
               width: tw * 1.0,
               margin: EdgeInsets.only(top: th * .46),
               decoration: BoxDecoration(
@@ -61,10 +63,10 @@ class _smsmsgState extends State<smsmsg> {
                       child: Container(
                         margin: EdgeInsets.only(left: 15),
                         child: Text(
-                          "Confirm via SMS",
+                          "Set new password",
                           style: TextStyle(
                               fontSize: th * 0.033,
-                              fontFamily: 'Poppins',
+                              fontFamily: 'pushpins',
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -74,7 +76,7 @@ class _smsmsgState extends State<smsmsg> {
                       child: Container(
                         margin: EdgeInsets.only(top: 10, left: 15),
                         child: Text(
-                          "Enter your phone number to confirm your account",
+                          "Enter the new password you would to use and try login",
                           style: TextStyle(
                               fontSize: th * 0.02, color: Color(0XFF8F92A1)),
                         ),
@@ -86,44 +88,89 @@ class _smsmsgState extends State<smsmsg> {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Container(
+                        // color: Colors.orange,
                         margin: EdgeInsets.only(left: 15),
                         child: Text(
-                          "PHONE NUMBER",
+                          "PASSWORD",
                           style: TextStyle(
-                              fontSize: th * 0.025,
+                              fontSize: th * 0.02,
                               color: Colors.black,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
-                      height: th * 0.07,
+                      // margin: EdgeInsets.only(top:1),
+                      height: th * 0.09,
                       width: tw * 0.85,
                       // color: Colors.orange,
                       child: TextFormField(
-                        keyboardType: TextInputType.number,
-                        decoration:
-                            InputDecoration(labelText: 'enter phone number'),
+                        obscureText: passvisibility,
+                        inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                        decoration: InputDecoration(
+                            labelText: 'enter password',
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  passvisibility = !passvisibility;
+                                },
+                                icon: Icon(passvisibility
+                                    ? Icons.visibility_off
+                                    : Icons.visibility))),
                       ),
                     ),
                     SizedBox(
-                      height: th * .17,
+                      height: th * 0.03,
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        margin: EdgeInsets.only(left: 15),
+                        child: Text(
+                          "REPEAT PASSWORD",
+                          style: TextStyle(
+                              fontSize: th * 0.02,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      // margin: EdgeInsets.only(top: 6),
+                      height: th * 0.09,
+                      width: tw * 0.85,
+                      // color: Colors.orange,
+                      child: TextFormField(
+                        inputFormatters: [LengthLimitingTextInputFormatter(10)],
+                        obscureText: passvisibility,
+                        decoration: InputDecoration(
+                            labelText: 'repeat password',
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  passvisibility = !passvisibility;
+                                },
+                                icon: Icon(passvisibility
+                                    ? Icons.visibility_off
+                                    : Icons.visibility))),
+                      ),
+                    ),
+                    SizedBox(
+                      height: th * 0.05,
                     ),
                     InkWell(
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (context) {
-                            return smsscode();
+                            return emailpage();
                           },
                         ));
+                        // Get.to(emailpage());
                       },
                       child: Container(
                         height: th * 0.07,
                         width: tw * 0.85,
                         child: Center(
                           child: Text(
-                            "Next step",
+                            "Reset password",
                             style: TextStyle(
                                 fontSize: th * 0.025,
                                 color: Colors.white,
@@ -136,7 +183,6 @@ class _smsmsgState extends State<smsmsg> {
                             borderRadius: BorderRadius.circular(40)),
                       ),
                     ),
-
                   ],
                 ),
               ),

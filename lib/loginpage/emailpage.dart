@@ -1,5 +1,7 @@
 // 01-Login_Email
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:real_estate/loginpage/createaccount.dart';
 import 'package:real_estate/loginpage/passwordpage.dart';
 
@@ -11,6 +13,7 @@ class emailpage extends StatefulWidget {
 }
 
 class _emailpageState extends State<emailpage> {
+
   @override
   Widget build(BuildContext context) {
     double Tht = MediaQuery.of(context).size.height;
@@ -99,11 +102,12 @@ class _emailpageState extends State<emailpage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return passwordpage();
-                        },
-                      ));
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) {
+                      //     return passwordpage();
+                      //   },
+                      // ));
+                       Get.to(passwordpage());
                     },
                     child: Container(
                       height: th * 0.07,
@@ -135,11 +139,12 @@ class _emailpageState extends State<emailpage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return createaccount();
-                        },
-                      ));
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) {
+                      //     return createaccount();
+                      //   },
+                      // ));
+                      Get.to(createaccount());
                     },
                     child: Container(
                       height: th * 0.07,

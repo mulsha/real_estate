@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/summarypage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -56,11 +57,12 @@ class _dtailspageState extends State<dtailspage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return summarypage();
-                  },
-                ));
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) {
+                //     return summarypage();
+                //   },
+                // ));
+                Get.to(summarypage());
               },
               child: Container(
                 margin: EdgeInsets.only(right: 15),

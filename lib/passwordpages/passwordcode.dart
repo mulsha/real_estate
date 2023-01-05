@@ -1,6 +1,7 @@
 //02-Phone_Verification
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/newpassword.dart';
+import 'package:flutter/services.dart';
+import 'package:real_estate/passwordpages/newpassword.dart';
 
 class passwordcode extends StatefulWidget {
   const passwordcode({Key? key}) : super(key: key);
@@ -78,7 +79,7 @@ class _passwordcodeState extends State<passwordcode> {
                     height: th * 0.07,
                     width: tw * 0.85,
                     // color: Colors.orange,
-                    child: TextFormField(
+                    child: TextFormField(inputFormatters: [LengthLimitingTextInputFormatter(4)],
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           labelText: 'enter pin code',

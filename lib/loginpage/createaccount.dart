@@ -1,6 +1,7 @@
 //01-Register_Step1
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/smsmsg.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/passwordpages/smsmsg.dart';
 
 class createaccount extends StatefulWidget {
   const createaccount({Key? key}) : super(key: key);
@@ -10,6 +11,15 @@ class createaccount extends StatefulWidget {
 }
 
 class _createaccountState extends State<createaccount> {
+  bool passvisibility = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    passvisibility = false;
+  }
+
   @override
   Widget build(BuildContext context) {
     double Tht = MediaQuery.of(context).size.height;
@@ -28,7 +38,8 @@ class _createaccountState extends State<createaccount> {
               width: double.infinity,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("images/BG1.png"), fit: BoxFit.fitWidth)),
+                      image: AssetImage("images/BG1.png"),
+                      fit: BoxFit.fitWidth)),
             ),
             Container(
               height: th * 0.57,
@@ -119,12 +130,18 @@ class _createaccountState extends State<createaccount> {
                       width: tw * 0.85,
                       // color: Colors.orange,
                       child: TextFormField(
+                        obscureText: passvisibility,
                         decoration: InputDecoration(
                             labelText: 'password',
-                            suffixIcon: Icon(
-                              Icons.visibility,
-                              size: th * 0.03,
-                            )),
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    passvisibility = !passvisibility;
+                                  });
+                                },
+                                icon: Icon(passvisibility
+                                    ? Icons.visibility_off
+                                    : Icons.visibility))),
                       ),
                     ),
                     SizedBox(
@@ -137,6 +154,7 @@ class _createaccountState extends State<createaccount> {
                             return smsmsg();
                           },
                         ));
+                        // Get.to(smsmsg());
                       },
                       child: Container(
                         height: th * 0.07,
@@ -156,7 +174,6 @@ class _createaccountState extends State<createaccount> {
                             borderRadius: BorderRadius.circular(40)),
                       ),
                     ),
-
                   ],
                 ),
               ),

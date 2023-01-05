@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/bottomsheet/Home/01-Home.dart';
-import 'package:real_estate/loginpage/mastarcard.dart';
+import 'package:real_estate/paymentpages/mastarcard.dart';
 
 class summarypage extends StatefulWidget {
   const summarypage({Key? key}) : super(key: key);
@@ -28,11 +29,12 @@ class _summarypageState extends State<summarypage> {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return home();
-                      },
-                    ));
+                    // Navigator.push(context, MaterialPageRoute(
+                    //   builder: (context) {
+                    //     return home();
+                    //   },
+                    // ));
+                    Get.back();
                   },
                   child: Container(
                     height: th * 0.055,
@@ -289,11 +291,12 @@ class _summarypageState extends State<summarypage> {
             ),
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return mastercard();
-                  },
-                ));
+                // Navigator.push(context, MaterialPageRoute(
+                //   builder: (context) {
+                //     return mastercard();
+                //   },
+                // ));
+                Get.to(mastercard());
               },
               child: Container(
                 height: th * 0.07,

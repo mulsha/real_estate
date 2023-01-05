@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/detailspage.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class favoritepage extends StatefulWidget {
@@ -479,95 +481,99 @@ class _favoritepageState extends State<favoritepage> {
               ),
             ),
 
-            Container(
-              width: th * 0.8,
-              height: th * 0.8,
-              child: ListView.builder(
-                itemCount: 7,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: th * 0.8,
-                    // height: th * 0.35,
-                    // decoration: BoxDecoration(color: Colors.orange),
-                    child: Column(
-                      children: [
-                        Container(
-                          width: th * 0.8,
-                          height: th * 0.25,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage("images/pic1.png"),
-                                  fit: BoxFit.fill)),
-                        ),
-                        Container(
-                          width: th * 0.8,
-                          height: th * 0.09,
-                          // decoration: BoxDecoration(color: Colors.green),
-                          child: Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    margin:
-                                        EdgeInsets.only(left: 10, top: 10),
-                                    child: Text(
-                                      "Suny apartment",
-                                      style: TextStyle(
-                                          fontSize: th * 0.023,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(left: 0, top: 5),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.location_on_outlined,
-                                            color: Color(0XFF8F92A1),
-                                            size: th * 0.02),
-                                        SizedBox(
-                                          width: tw * 0.01,
-                                        ),
-                                        Text(
-                                          "Los Angeles",
-                                          style: TextStyle(
-                                              fontSize: th * 0.02,
-                                              color: Color(0XFF8F92A1)),
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Spacer(
-                                flex: 1,
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(bottom: 20),
-                                child: Text(
-                                  "\$233",
-                                  style: TextStyle(
-                                      fontSize: th * 0.025,
-                                      color: Color(0XFF049FFF)),
-                                ),
-                              ),
-                              Container(
-                                margin:
-                                    EdgeInsets.only(bottom: 20, right: 10),
-                                child: Text(
-                                  " /per day",
-                                  style: TextStyle(
-                                      fontSize: th * 0.02,
-                                      color: Color(0XFF8F92A1)),
-                                ),
-                              ),
-                            ],
+            InkWell(onTap: () {
+              Get.to(dtailspage());
+            },
+              child: Container(
+                width: th * 0.8,
+                height: th * 0.8,
+                child: ListView.builder(
+                  itemCount: 7,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: th * 0.8,
+                      // height: th * 0.35,
+                      // decoration: BoxDecoration(color: Colors.orange),
+                      child: Column(
+                        children: [
+                          Container(
+                            width: th * 0.8,
+                            height: th * 0.25,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: AssetImage("images/pic1.png"),
+                                    fit: BoxFit.fill)),
                           ),
-                        )
-                      ],
-                    ),
-                  );
-                },
+                          Container(
+                            width: th * 0.8,
+                            height: th * 0.09,
+                            // decoration: BoxDecoration(color: Colors.green),
+                            child: Row(
+                              children: [
+                                Column(
+                                  children: [
+                                    Container(
+                                      margin:
+                                          EdgeInsets.only(left: 10, top: 10),
+                                      child: Text(
+                                        "Suny apartment",
+                                        style: TextStyle(
+                                            fontSize: th * 0.023,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 0, top: 5),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.location_on_outlined,
+                                              color: Color(0XFF8F92A1),
+                                              size: th * 0.02),
+                                          SizedBox(
+                                            width: tw * 0.01,
+                                          ),
+                                          Text(
+                                            "Los Angeles",
+                                            style: TextStyle(
+                                                fontSize: th * 0.02,
+                                                color: Color(0XFF8F92A1)),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                Spacer(
+                                  flex: 1,
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 20),
+                                  child: Text(
+                                    "\$233",
+                                    style: TextStyle(
+                                        fontSize: th * 0.025,
+                                        color: Color(0XFF049FFF)),
+                                  ),
+                                ),
+                                Container(
+                                  margin:
+                                      EdgeInsets.only(bottom: 20, right: 10),
+                                  child: Text(
+                                    " /per day",
+                                    style: TextStyle(
+                                        fontSize: th * 0.02,
+                                        color: Color(0XFF8F92A1)),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             )
           ],

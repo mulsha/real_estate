@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate/succespayment.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/paymentpages/succespayment.dart';
 import 'package:real_estate/summarypage.dart';
 
 class mastercard extends StatefulWidget {
@@ -28,9 +29,10 @@ class _mastercardState extends State<mastercard> {
                 Row(
                   children: [
                     InkWell(onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return summarypage();
-                      },));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      //   return summarypage();
+                      // },));
+                      Get.back();
                     },
                       child: Container(
                         height: th * 0.055,
@@ -241,11 +243,12 @@ class _mastercardState extends State<mastercard> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return succespayment();
-                      },
-                    ));
+                    // Navigator.push(context, MaterialPageRoute(
+                    //   builder: (context) {
+                    //     return succespayment();
+                    //   },
+                    // ));
+                    Get.to(succespayment());
                   },
                   child: Container(
                     height: th * 0.07,

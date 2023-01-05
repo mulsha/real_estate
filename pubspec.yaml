@@ -37,6 +37,8 @@ dependencies:
   table_calendar:
   draggable_bottom_sheet:
   smooth_page_indicator:
+  flutter_animate:
+  get:
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class reviewpage extends StatefulWidget {
   const reviewpage({Key? key}) : super(key: key);
@@ -33,21 +34,25 @@ class _reviewpageState extends State<reviewpage> {
           SizedBox(height: th * 0.05),
           Row(
             children: [
-              Container(
-                height: th * 0.055,
-                width: th * 0.055,
-                margin: EdgeInsets.only(left: 10),
-                child: Center(
-                  child: Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    size: th * 0.04,
-                    color: Colors.white,
+              InkWell(onTap: () {
+                Get.back();
+              },
+                child: Container(
+                  height: th * 0.055,
+                  width: th * 0.055,
+                  margin: EdgeInsets.only(left: 20),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      size: th * 0.035,
+                      color: Colors.white,
+                    ),
                   ),
+                  decoration: BoxDecoration(
+                      color: Color(0XFF049FFF), shape: BoxShape.circle),
                 ),
-                decoration: BoxDecoration(
-                    color: Color(0XFF049FFF), shape: BoxShape.circle),
               ),
-              SizedBox(width: tw * 0.05),
+              SizedBox(width: tw * 0.01),
               Container(
                   height: th * 0.057,
                   width: tw * 0.72,

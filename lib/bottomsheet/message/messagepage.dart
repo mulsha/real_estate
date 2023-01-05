@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate/loginpage/chatmsg.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/bottomsheet/message/chatmsg.dart';
 
 class messagepage extends StatefulWidget {
   const messagepage({Key? key}) : super(key: key);
@@ -80,11 +81,12 @@ class _messagepageState extends State<messagepage> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return chatmsg();
-                        },
-                      ));
+                      // Navigator.push(context, MaterialPageRoute(
+                      //   builder: (context) {
+                      //     return chatmsg();
+                      //   },
+                      // ));
+                      Get.to(chatmsg());
                     },
                     child: Card(
                       child: ListTile(

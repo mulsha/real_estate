@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class viewaccount extends StatefulWidget {
   const viewaccount({Key? key}) : super(key: key);
@@ -47,12 +48,13 @@ class _viewaccountState extends State<viewaccount> {
                       ),
                     ),
                   ),
-                  Positioned(
-                    bottom: 170,
+                  InkWell(onTap: () {
+                    Get.back();
+                  },
                     child: Container(
                       height: th * 0.06,
                       width: th * 0.06,
-                      margin: EdgeInsets.only(left: 25),
+                      margin: EdgeInsets.only(left: 25, bottom: 130),
                       child: Icon(
                         Icons.arrow_back_ios_new_outlined,
                         color: Colors.white,
@@ -166,7 +168,8 @@ class _viewaccountState extends State<viewaccount> {
                       ],
                     ),
                   ),
-                  Container(margin: EdgeInsets.only(left: 20,top: 20,bottom: 5),
+                  Container(
+                    margin: EdgeInsets.only(left: 20, top: 20, bottom: 5),
                     child: Row(
                       children: [
                         Container(
@@ -181,7 +184,8 @@ class _viewaccountState extends State<viewaccount> {
                             color: Colors.white,
                           ),
                         ),
-                        Container(margin: EdgeInsets.only(left: 10),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
                           height: th * 0.05,
                           width: th * 0.05,
                           decoration: BoxDecoration(
@@ -238,7 +242,7 @@ class _viewaccountState extends State<viewaccount> {
                   SizedBox(
                     height: th * 0.04,
                   ),
-                   Container(
+                  Container(
                     width: th * 0.8,
                     height: th * 0.8,
                     child: ListView.builder(
@@ -256,11 +260,9 @@ class _viewaccountState extends State<viewaccount> {
                                 width: th * 0.8,
                                 height: th * 0.25,
                                 decoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(20),
                                     image: DecorationImage(
-                                        image:
-                                        AssetImage("images/pic1.png"),
+                                        image: AssetImage("images/pic1.png"),
                                         fit: BoxFit.fill)),
                               ),
                               Container(
@@ -278,20 +280,16 @@ class _viewaccountState extends State<viewaccount> {
                                             "Suny apartment",
                                             style: TextStyle(
                                                 fontSize: th * 0.023,
-                                                fontWeight:
-                                                FontWeight.bold),
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                         Container(
-                                          margin: EdgeInsets.only(
-                                              left: 0, top: 5),
+                                          margin:
+                                              EdgeInsets.only(left: 0, top: 5),
                                           child: Row(
                                             children: [
-                                              Icon(
-                                                  Icons
-                                                      .location_on_outlined,
-                                                  color:
-                                                  Color(0XFF8F92A1),
+                                              Icon(Icons.location_on_outlined,
+                                                  color: Color(0XFF8F92A1),
                                                   size: th * 0.02),
                                               SizedBox(
                                                 width: tw * 0.01,
@@ -300,8 +298,7 @@ class _viewaccountState extends State<viewaccount> {
                                                 "Los Angeles",
                                                 style: TextStyle(
                                                     fontSize: th * 0.02,
-                                                    color: Color(
-                                                        0XFF8F92A1)),
+                                                    color: Color(0XFF8F92A1)),
                                               ),
                                             ],
                                           ),
